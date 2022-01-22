@@ -44,7 +44,7 @@ image_url = scraper.image()
 img_data = requests.get(image_url).content
 with open('image.jpg', 'wb') as handler:
     handler.write(img_data)
-# Resizing the image
+# Resizing the image... Necessary?
 img = Image.open("image.jpg")
 img_width = 125
 scaling_percent = (img_width / float(img.size[0]))
@@ -56,6 +56,7 @@ img_pos_x = width - (7 * cm)
 img_pos_y = height - (8 * cm)
 pdf.drawImage("image.jpg", img_pos_x, img_pos_y)
 # pdf.drawImage("image.jpg", img_pos_x, img_pos_y, 5 * cm, 7.5 * cm)
+
 
 # Instructions
 # TODO: Fix paragraphs and spacing; add listing
