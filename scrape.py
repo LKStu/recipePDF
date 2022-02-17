@@ -102,5 +102,5 @@ def generate_pdf(save_location, margins_top=(2.5 * cm), margins_bottom=(2.5 * cm
 
 # Generating and saving PDF
 pdf_name = title + ".pdf"
-save_loc = os.path.join(os.path.expanduser("~"), "Desktop/", pdf_name)
+save_loc = os.path.join(os.path.expanduser("~"), "Downloads/", pdf_name)
 generate_pdf(save_loc)
