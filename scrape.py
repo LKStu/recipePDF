@@ -11,7 +11,8 @@ import os
 
 # Source
 url = 'https://www.jamieoliver.com/recipes/pasta-recipes/goldie-hawn-s-fettuccine-alfredo/'
-scraper = scrape_me(url)
+url2 = 'https://food52.com/recipes/34841-chickpea-and-lentil-salad-with-shallot-white-wine-vinaigrette'
+scraper = scrape_me(url2)
 
 # Gathering information
 title = scraper.title()
@@ -26,6 +27,7 @@ margins_bottom: float = 2.0 * cm
 
 
 # Title
+# TODO: Break if title is too long
 def make_title(pdf, title_name, title_pos):
     """Generating the PDF with by calling other methods"""
     pdf.setFont('Helvetica-Bold', 20)
@@ -45,6 +47,7 @@ def make_ingredients(pdf, pos_x, pos_y):
     return ingredients_pos_y
 
 
+# TODO: Sizing and quality of the image, maybe also work on positioning
 def make_image(pdf, img_url, pos_x, pos_y):
     """Generating the PDF with by calling other methods"""
     img_data = requests.get(img_url).content
@@ -63,7 +66,7 @@ def make_image(pdf, img_url, pos_x, pos_y):
 
 
 # Instructions
-# TODO: Fix paragraphs and spacing; add listing
+# TODO: Fix paragraphs and spacing; add listing instead
 def make_instructions(pdf, ingredients_y):
     """Generating the PDF with by calling other methods"""
     instructions_pos_x = margins_side
